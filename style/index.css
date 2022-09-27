@@ -1,17 +1,20 @@
-html{
+html {
  box-sizing: border-box;
- font-family: 'Inter',sans-serif;
-font-size: 16px;
+ font-family: 'Inter', sans-serif;
+ font-size: 16px;
 }
-*,*::after,*::before{
+
+*,
+*::after,
+*::before {
  box-sizing: inherit;
 }
 
-body{
+body {
  background-color: #E5E5E5;
 }
 
-.img-container{
+.img-container {
  width: 90%;
  margin-left: auto;
  margin-right: auto;
@@ -19,23 +22,28 @@ body{
  margin-bottom: 5px;
 }
 
+img {
+ width: 35px;
+ height: 37px;
+}
+
 /* !Section de inicio de juego */
 
-#section-inicio{
+.section-inicio {
  width: 100%;
  height: 90vh;
 }
 
-.section-container{
+.section-container {
  display: flex;
  height: 100%;
  flex-flow: column;
  align-items: center;
  justify-content: center;
- 
+
 }
 
-.btn-jugar{
+.btn-jugar {
  width: 80%;
  height: 105px;
  color: #FFF;
@@ -46,8 +54,8 @@ body{
  cursor: pointer;
 }
 
-.btn-agregar{
- width:60%;
+.btn-agregar {
+ width: 60%;
  height: 105px;
  color: #0A3871;
  background-color: #FFF;
@@ -55,18 +63,21 @@ body{
  border-radius: 24px;
  cursor: pointer;
 }
-.ocultar{
+
+.ocultar {
  display: none;
 }
-/* !Section juego */
+
+/* !Section palabra nueva */
 /* #section-juego{
  display: none;
 } */
-#section-palabra{
+.section-palabra {
  width: 100%;
  height: 90vh;
 }
-.palabra-container{
+
+.palabra-container {
  width: 90%;
  height: 60vh;
  padding-top: 6em;
@@ -74,40 +85,44 @@ body{
  margin-right: auto;
 }
 
-.palabra-container input{
+.palabra-container input {
  width: 90%;
  height: 1.5em;
  border: 0;
  background-color: #E5E5E5;
 }
-.palabra-container input::placeholder{
+
+.palabra-container input::placeholder {
  font-size: 25px;
  color: #0A3871;
 }
 
-#section-btn{
+#section-btn {
  width: 100%;
  height: 30vh;
 }
-.btn-container{
+
+.btn-container {
  width: 90%;
  display: flex;
  flex-flow: column;
  margin-left: auto;
  margin-right: auto;
 }
-.btn-container i{
+
+.btn-container i {
  font-size: 1.2em;
  color: #000;
 }
-.btn-container p{
+
+.btn-container p {
  margin: 0;
  font-size: 0.9em;
  color: #495057;
  margin-bottom: 10px;
 }
 
-.btn-guardar{
+.btn-guardar {
  width: 100%;
  height: 4.18em;
  background-color: #0A3871;
@@ -115,148 +130,276 @@ body{
  margin-bottom: 1em;
  border: thin solid #0A3871;
  border-radius: 24px;
+ cursor: pointer;
 }
-.btn-cancelar{
+
+.btn-cancelar {
  width: 100%;
  height: 4.18em;
  border: thin solid #0A3871;
  color: #000;
  border-radius: 24px;
+ cursor: pointer;
 }
 
-footer{
+/* !section juego */
+.section-juego {
+ width: 100%;
+ height: 95vh;
+}
+
+.juego-container {
+ width: 90%;
+ height: 90vh;
+ margin: 0 auto;
+}
+
+.canvas-container {
+ margin: 0 auto;
+}
+
+.canvas-container div {
+ width: 600px;
+ height: 400px;
+ margin: 0 auto;
+}
+
+canvas {
+ background-color: #F0F8FF;
+}
+
+.container-letras {
+ width: 100%;
+ margin-bottom: 10px;
+}
+.letras-correc{
+ width: 80%;
+ display: flex;
+ margin-left: 25em;
+}
+.letras-correctas {
+ position: relative;
+ text-align: center;
+ font-size: 1.2em;
+ color: purple;
+ margin-right: 1em;
+}
+
+.letra-oculta {
+ visibility: hidden;
+}
+
+
+.letras-correctas::after {
+ content: ' ';
+ width: 20px;
+ height: 1px;
+ display: block;
+ position: absolute;
+ left: 0;
+ border-bottom: 3px solid cyan;
+}
+
+.letra-guion{
+ width: 30px;
+ height: 3px;
+ background-color: cyan;
+ margin: 5px;
+}
+
+.letras-incorrectas {
+ height: 40px;
+ margin-bottom: 10px;
+}
+
+.botones-juego {
+ margin: 0 auto;
+}
+
+.botones-juego-container {
+ width: 90%;
+ display: flex;
+ flex-flow: column;
+ margin: 0 auto;
+
+}
+
+.btn-nuevo {
+ width: 370px;
+ height: 4.18em;
+ background-color: #0A3871;
+ color: #FFF;
+ margin-bottom: 1em;
+ border: thin solid #0A3871;
+ border-radius: 24px;
+ cursor: pointer;
+}
+
+.btn-retirarse {
+ width: 370px;
+ height: 4.18em;
+ border: thin solid #0A3871;
+ color: #000;
+ border-radius: 24px;
+ cursor: pointer;
+}
+
+footer {
  width: 100%;
  height: 10vh;
  background-color: #E5E5E5;
 }
-.footer-container p{ 
+
+.footer-container p {
  margin: 0;
- }
+}
 
 
 
- /*!tablets*/
-@media(min-width:700px){
+/*!tablets*/
+@media(min-width:700px) {
 
- .img-container{
+ .img-container {
   width: 90%;
   margin-top: 40px;
   margin-bottom: 5px;
  }
 
-.btn-jugar{
- width: 50%;
- height: 13%;
- color: #FFF;
- background-color: #0A3871;
- margin-bottom: 20px;
- border-radius: 24px;
-}
+ .btn-jugar {
+  width: 50%;
+  height: 13%;
+  color: #FFF;
+  background-color: #0A3871;
+  margin-bottom: 20px;
+  border-radius: 24px;
+ }
 
-.btn-agregar{
- width:50%;
- height: 8%;
- color: #0A3871;
- background-color: #FFF;
- border: thin solid #0A3871;
- border-radius: 24px;
-}
-#section-palabra{
- width: 100%;
- height: 90vh;
-}
-.palabra-container{
- padding-top: 10em;
- height: 70vh;
-}
-.palabra-container input{
- height: 3em;
-}
-.palabra-container input::placeholder{
- font-size: 2.2em;
-}
+ .btn-agregar {
+  width: 50%;
+  height: 8%;
+  color: #0A3871;
+  background-color: #FFF;
+  border: thin solid #0A3871;
+  border-radius: 24px;
+ }
 
-#section-btn{
- width: 100%;
- height: 20vh;
-}
-.btn-container{
- width: 90%;
- display: block;
- 
- margin-left: auto;
- margin-right: auto;
-}
-.btn-container p{
- margin-bottom: 15px;
-}
-.btn-guardar{
- width: 47%;
- height: 4.18em;
- margin-right: 1.6em;
- margin-bottom: 0;
- background-color: #0A3871;
- color: #FFF;
- border: thin solid #0A3871;
- border-radius: 24px;
-}
-.btn-cancelar{
- width: 47%;
- height: 4.18em;
- border: thin solid #0A3871;
- color: #000;
- border-radius: 24px;
-}
+ .section-palabra {
+  width: 100%;
+  height: 90vh;
+ }
+
+ .palabra-container {
+  padding-top: 10em;
+  height: 70vh;
+ }
+
+ .palabra-container input {
+  height: 3em;
+ }
+
+ .palabra-container input::placeholder {
+  font-size: 2.2em;
+ }
+
+ #section-btn {
+  width: 100%;
+  height: 20vh;
+ }
+
+ .btn-container {
+  width: 90%;
+  display: block;
+
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .btn-container p {
+  margin-bottom: 15px;
+ }
+
+ .btn-guardar {
+  width: 47%;
+  height: 4.18em;
+  margin-right: 1.6em;
+  margin-bottom: 0;
+  background-color: #0A3871;
+  color: #FFF;
+  border: thin solid #0A3871;
+  border-radius: 24px;
+ }
+
+ .btn-cancelar {
+  width: 47%;
+  height: 4.18em;
+  border: thin solid #0A3871;
+  color: #000;
+  border-radius: 24px;
+ }
 }
 
 /*!computador*/
-@media(min-width:1050px){
+@media(min-width:1050px) {
 
- .img-container{
+ .img-container {
   margin-top: 20px;
  }
 
-.btn-jugar{
- width: 25%;
- height: 13%;
- color: #FFF;
- background-color: #0A3871;
- margin-bottom: 20px;
- border-radius: 24px;
-}
+ .btn-jugar {
+  width: 25%;
+  height: 13%;
+  color: #FFF;
+  background-color: #0A3871;
+  margin-bottom: 20px;
+  border-radius: 24px;
+ }
 
-.btn-agregar{
- width:20%;
- height: 8%;
- color: #0A3871;
- background-color: #FFF;
- border: thin solid #0A3871;
- border-radius: 24px;
-}
+ .btn-agregar {
+  width: 20%;
+  height: 8%;
+  color: #0A3871;
+  background-color: #FFF;
+  border: thin solid #0A3871;
+  border-radius: 24px;
+ }
 
-.img-container{
- margin-top: 1em;
-}
-#section-palabra{
- height: 70%;
- height: 90vh;
-}
-.palabra-nueva{
- width: 70%;
- height: 80%;
- margin-left: auto;
- margin-right: auto;
-}
-.palabra-container{
- padding-top: 2.5em;
-}
-.palabra-container input{
- height: 1.5em;
-}
-.palabra-container input::placeholder{
- font-size: 1.5em;
-}
-/* #section-btn{
+ .img-container {
+  margin-top: 1em;
+ }
+
+ #section-palabra {
+  height: 70%;
+  height: 90vh;
+ }
+
+ .palabra-nueva {
+  width: 70%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .palabra-container {
+  padding-top: 2.5em;
+ }
+
+ .palabra-container input {
+  height: 2em;
+ }
+
+ .palabra-container input::placeholder {
+  font-size: 1.5em;
+  height: 1.5em;
+ }
+
+ /* #section-btn{
  height: 30vh;
 } */
+ .botones-juego-container {
+  width: 90%;
+  display: flex;
+  flex-flow: row;
+  margin: 0 auto;
+  justify-content: space-evenly;
+ }
 }

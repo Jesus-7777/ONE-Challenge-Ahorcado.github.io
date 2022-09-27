@@ -24,32 +24,52 @@
  </header>
  <main>
   <!-- inicio -->
-  <section id="section-inicio" class="ocultar">
+  <section id="inicio" class="section-inicio">
    <div class="section-container">
-    <button type="submit" class="btn-jugar">Jugar Ahora</button>
-    <button type="submit" class="btn-agregar">Agregar Palabra</button>
+    <button type="submit" class="btn-jugar" onclick="iniciarJuego()">Jugar Ahora</button>
+    <button type="submit" class="btn-agregar"onclick="agregarPalabra()">Agregar Palabra</button>
    </div>
   </section>
 
-  <!-- parte de juego ahorcado -->
+  <!-- parte de agregar palabra -->
   <section id="section-palabra" class="ocultar">
    <div class="palabra-nueva">
-
+    
     <div class="palabra-container">
      <input type="text" name="palabra" id="palabra" placeholder="Ingrese una palabra" required>
     </div>
-
+    
     <div id="section-btn">
      <div class="btn-container">
       <p><i class="bi bi-exclamation-circle-fill"></i> Max. de 8 letras</p>
-      <button type="submit" class="btn-guardar">Guardar y empezar</button>
-      <button type="submit" class="btn-cancelar">Cancelar</button>
+      <button type="submit" class="btn-guardar" onclick="guardarPalabra()">Guardar y empezar</button>
+      <button type="submit" class="btn-cancelar" onclick="cancelar()">Cancelar</button>
      </div>
     </div>
    </div>
   </section>
-  <section id="section-juego">
-   
+
+  <!-- parte del juego -->
+  <section id="juego" class="ocultar ">
+   <div class="juego-container">
+    <div class="canvas-container">
+     <div>
+      <canvas id="canvas" width="500" height="400"></canvas>
+     </div>
+    </div>
+    <div class="container-letras">
+     <div id="letras-correctas" class="letras-correc">
+     </div>
+    </div>
+    <div class="letras-incorrectas">
+    </div>
+    <div class="botones-juego">
+     <div class="botones-juego-container">
+      <button type="submit" class="btn-nuevo"onclick="iniciarJuego()">Nuevo Juego</button>
+      <button type="submit" class="btn-retirarse">Retirarse</button>
+     </div>
+    </div>
+   </div>
   </section>
  </main>
  <footer>
@@ -57,6 +77,7 @@
    <p>&copy; Alura ONE</p>
   </div>
  </footer>
+ <script src="/js/index.js"></script>
 </body>
 
 </html>
