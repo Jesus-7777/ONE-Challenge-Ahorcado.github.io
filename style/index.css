@@ -11,7 +11,8 @@ html {
 }
 
 body {
- background-color: #E5E5E5;
+ /* background-color: #E5E5E5; */
+ background-color: #FFF;
 }
 
 .img-container {
@@ -152,6 +153,7 @@ img {
  width: 90%;
  height: 90vh;
  margin: 0 auto;
+ text-align: center;
 }
 
 .canvas-container {
@@ -168,15 +170,19 @@ canvas {
  background-color: #F0F8FF;
 }
 
+.letras-correc {
+ width: 80%;
+ display: inline-block;
+ /* margin-left: 25em; */
+ text-align: center;
+}
+
 .container-letras {
  width: 100%;
  margin-bottom: 10px;
+
 }
-.letras-correc{
- width: 80%;
- display: flex;
- margin-left: 25em;
-}
+
 .letras-correctas {
  position: relative;
  text-align: center;
@@ -186,21 +192,23 @@ canvas {
 }
 
 .letra-oculta {
- visibility: hidden;
+ color: transparent;
 }
 
 
 .letras-correctas::after {
  content: ' ';
- width: 20px;
- height: 1px;
  display: block;
  position: absolute;
  left: 0;
+ width: 15px;
+ height: 1px;
+ min-width: 12px;
  border-bottom: 3px solid cyan;
 }
 
-.letra-guion{
+
+.letra-guion {
  width: 30px;
  height: 3px;
  background-color: cyan;
@@ -208,8 +216,40 @@ canvas {
 }
 
 .letras-incorrectas {
+ width: 100%;
+ text-align: center;
  height: 40px;
+
+}
+
+.letras-rojas {
  margin-bottom: 10px;
+ display: inline-block;
+ color: #DC143C;
+}
+
+.perdiste {
+ font-family: 'Press Start 2P', cursive;
+ font-size: 100px;
+ text-align: center;
+ position: absolute;
+ top: 50%;
+ color: #DC143C;
+ transform: translateY(-50%);
+}
+
+.ganaste {
+ font-family: 'Press Start 2P', cursive;
+ font-size: 100px;
+ text-align: center;
+ position: absolute;
+ top: 50%;
+ color: #98FB98;
+ transform: translateY(-50%);
+}
+
+.juego-perdido {
+ text-align: center;
 }
 
 .botones-juego {
@@ -244,11 +284,45 @@ canvas {
  cursor: pointer;
 }
 
+.dialog[open] {
+ display: flex;
+ border-radius: 10px;
+ border: none;
+ background-color: #FA8072;
+ top: 10px;
+ align-items: center;
+}
+
+.dialog[open]>p {
+ margin-left: 10px;
+}
+
+.dialog[open]>input {
+ padding: 2px 5px;
+ border-radius: 4px;
+ border: none;
+ background-color: #228B22;
+ color: #fff;
+ transform: scale(1);
+ transition: transform 0.2s;
+}
+
+.dialog[open]>input:hover {
+ transform: scale(1.05);
+ cursor: pointer;
+}
+
+
 footer {
+ display: flex;
+ align-items: center;
  width: 100%;
  height: 10vh;
  background-color: #E5E5E5;
+ justify-content: space-evenly;
+
 }
+
 
 .footer-container p {
  margin: 0;

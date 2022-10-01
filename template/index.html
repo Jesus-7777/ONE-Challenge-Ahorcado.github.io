@@ -7,6 +7,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
  <link
   href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700&family=Montserrat:ital,wght@0,100;0,300;0,400;0,600;1,400;1,600&family=Raleway:ital,wght@0,100;0,400;0,700;1,300&display=swap"
   rel="stylesheet">
@@ -27,18 +28,18 @@
   <section id="inicio" class="section-inicio">
    <div class="section-container">
     <button type="submit" class="btn-jugar" onclick="iniciarJuego()">Jugar Ahora</button>
-    <button type="submit" class="btn-agregar"onclick="agregarPalabra()">Agregar Palabra</button>
+    <button type="submit" class="btn-agregar" onclick="agregarPalabra()">Agregar Palabra</button>
    </div>
   </section>
 
   <!-- parte de agregar palabra -->
   <section id="section-palabra" class="ocultar">
    <div class="palabra-nueva">
-    
+
     <div class="palabra-container">
      <input type="text" name="palabra" id="palabra" placeholder="Ingrese una palabra" required>
     </div>
-    
+
     <div id="section-btn">
      <div class="btn-container">
       <p><i class="bi bi-exclamation-circle-fill"></i> Max. de 8 letras</p>
@@ -47,26 +48,42 @@
      </div>
     </div>
    </div>
+   <dialog id="dialog" class="dialog">
+    <input type="button" value="x" />
+    <p>Solo se admiten letras mayúsculas sin acentos.</p>
+   </dialog>
+   <dialog id="dialog2" class="dialog">
+    <input type="button" value="x" />
+    <p>La palabra debe tener como maximo 8 letras y como minimo 1 letra.</p>
+   </dialog>
   </section>
 
   <!-- parte del juego -->
   <section id="juego" class="ocultar ">
-   <div class="juego-container">
+   <div id="juego-container">
+    <div id="perdido-container">
+     <div class="juego-perdido"></div>
+    </div>
+    <div id="ganado-container">
+     <div class="juego-ganado"></div>
+    </div>
+
     <div class="canvas-container">
      <div>
       <canvas id="canvas" width="500" height="400"></canvas>
      </div>
     </div>
+
     <div class="container-letras">
      <div id="letras-correctas" class="letras-correc">
      </div>
     </div>
-    <div class="letras-incorrectas">
+    <div id="letras-incorrectas" class="letras-incorrectas">
     </div>
     <div class="botones-juego">
      <div class="botones-juego-container">
-      <button type="submit" class="btn-nuevo"onclick="iniciarJuego()">Nuevo Juego</button>
-      <button type="submit" class="btn-retirarse">Retirarse</button>
+      <button type="submit" class="btn-nuevo" onclick="juegoNuevo()">Nuevo Juego</button>
+      <button type="submit" class="btn-retirarse" onclick="retirarse()">Retirarse</button>
      </div>
     </div>
    </div>
@@ -74,7 +91,10 @@
  </main>
  <footer>
   <div class="footer-container">
-   <p>&copy; Alura ONE</p>
+   <div class="alura-credit">
+    <p>&copy; Alura ONE</p>
+   </div >
+
   </div>
  </footer>
  <script src="/js/index.js"></script>
